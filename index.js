@@ -3,13 +3,17 @@ const express = require('express');
 const http = require('http');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
+const mongoose = require('mongoose');
 
 // making an instance of express
 const app = express();
-
 const router = require('./router')
 
 router(app);
+
+// Connecting to our dataBase this is
+// also where you name your db
+mongoose.connect('mongodb://localhost:auth/auth')
 
 
 // App SetUp
